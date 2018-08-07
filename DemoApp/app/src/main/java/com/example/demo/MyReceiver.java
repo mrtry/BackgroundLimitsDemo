@@ -19,7 +19,7 @@ public class MyReceiver extends BroadcastReceiver {
 
         if (prefs.getRebootDemoEnable()) {
             //Fail, IllegalStateException: Not allowed to start service.
-            context.startService(serviceIntent);
+            MyIntentService.enqueue(context);
         } else {
             ContextCompat.startForegroundService(context, serviceIntent);
         }
